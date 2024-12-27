@@ -1,0 +1,31 @@
+{
+  "private": true,
+  "name": "writings.brendanle.me",
+  "repository": "https://github.com/brendanle65/writings.brendanle.me",
+  "author": "<brendan.mi.le@outlook.com>",
+  "@comments": {
+    "__all__:": "see README.md for more details on all the scripts below:",
+    "dev": "serve development files",
+    "start": "serve production files",
+    "build": "build production files"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "start": "npx serve@latest out",
+    "build": "next build"
+  },
+  "dependencies": {
+    "framer-motion": "^11.15.0",
+    "next": "^15.1.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "styled-components": "^6.1.13"
+  },
+  "devDependencies": {
+    "@types/next": "^9.0.0",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "typescript": "^5.7.2"
+  }
+}
