@@ -1,0 +1,27 @@
+/* see `public/scripts/theme.js` for why we use css variables instead of defining the theme in `src/constants/theme.ts`*/
+:root {
+  --white: #ffffff;
+  --black: #000000;
+}
+
+.light {
+  --theme-cursor-background: var(--black);
+  --theme-cursor-filter: invert(100%);
+
+  --theme-body: var(--white);
+  --theme-text-500: #6b7280;
+  --theme-text-1000: var(--black);
+
+  --theme-divider: #d1d5db;
+}
+
+.dark {
+  --theme-cursor-background: var(--white);
+  --theme-cursor-filter: none;
+
+  --theme-body: var(--black);
+  --theme-text-500: #d1d5db;
+  --theme-text-1000: var(--white);
+
+  --theme-divider: #d1d5db;
+}

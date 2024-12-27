@@ -19,30 +19,33 @@ export const Wrapper = styled.div<{ $state: CursorState }>`
 
 export const Cursor = styled.div<{ $state: CursorState; $extras?: CursorExtras }>`
   transform: translate(-50%, -50%);
-  transition: width 0.25s ease-out, height 0.25s ease-out,
-    background-color ${(props) => `${props.theme.transitions.theme.duration} ${props.theme.transitions.theme.easing}}`};
+
+  // do not use shorthand syntax, it leads to an invalid style when interpolating
+  transition-property: width, height, background-color;
+  transition-duration: 0.25s, 0.25s, ${(props) => props.theme.transitions.theme.duration};
+  transition-timing-function: ease-out, ease-out, ${(props) => props.theme.transitions.theme.easing};
 
   ${(props) => {
-    if (props.$state === CursorState.IDLE)
+    if (props.$state === CursorState.IDLE) {
       return css`
         width: 25px;
         height: 25px;
-        background-color: ${props.theme.colors.cursor};
-        filter: ${props.theme.name === "light" ? "invert(100%)" : "none"}; // account for mix-blend-mode
+        background-color: ${props.theme.colors.cursor.background};
+        filter: var(--theme-cursor-filter);
         border-radius: ${props.theme.radii.full};
       `;
-    else if (props.$state === CursorState.HOVER) {
+    } else if (props.$state === CursorState.HOVER) {
       return css`
         width: 9px;
         height: 9px;
-        background-color: ${props.theme.colors.cursor};
+        background-color: ${props.theme.colors.cursor.background};
         border-radius: ${props.theme.radii.full};
       `;
     } else if (props.$state === CursorState.IMAGE) {
       return css`
         width: ${props.$extras.image?.width || "144px"};
         height: ${props.$extras.image?.height || "144px"};
-        background-color: ${props.theme.colors.cursor};
+        background-color: ${props.theme.colors.cursor.background};
       `;
     }
   }}

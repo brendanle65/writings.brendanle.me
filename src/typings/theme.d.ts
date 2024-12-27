@@ -2,19 +2,8 @@
 import "styled-components";
 
 // import other
-import { BaseTheme } from "@constants/themes";
+import { Theme } from "@constants/theme";
 
 declare module "styled-components" {
-  export interface DefaultTheme extends BaseTheme {
-    name: string;
-    colors: {
-      cursor: string;
-      body: string;
-      text: {
-        500: string;
-        1000: string;
-      };
-      divider: string;
-    };
-  }
+  export interface DefaultTheme extends Theme {}
 }

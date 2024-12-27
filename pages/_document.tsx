@@ -1,5 +1,6 @@
 // import libraries
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 import { ServerStyleSheet } from "styled-components";
 
 /**
@@ -39,8 +40,9 @@ export default class CustomDocument extends Document {
           <Main />
           <NextScript />
 
-          <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-          <script noModule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+          <Script strategy="beforeInteractive" src="/scripts/theme.js"></Script>
+          <Script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></Script>
+          <Script noModule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></Script>
         </body>
       </Html>
     );

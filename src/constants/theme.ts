@@ -1,5 +1,3 @@
-import { DefaultTheme } from "styled-components";
-
 const fonts = {
   eb_garamond: "var(--font-eb-garamond)",
   cormorant_garamond: "var(--font-cormorant-garamond)",
@@ -54,10 +52,18 @@ const shadows = {
   md: "drop-shadow(0 10px 8px rgba(163, 160, 160, 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1))", // medium
 };
 
-// we don't pass colors to theme directly, we set theme depending on light/dark and to role (body, text, etc.)
-const _colors = {
-  white: "#ffffff",
-  black: "#000000",
+// see `public/scripts/theme.js` for why we use css variables instead of defining the different themes here
+const colors = {
+  cursor: {
+    background: "var(--theme-cursor-background)",
+    filter: "var(--theme-cursor-filter)",
+  },
+  body: "var(--theme-body)",
+  text: {
+    500: "var(--theme-text-500)",
+    1000: "var(--theme-text-1000)",
+  },
+  divider: "var(--theme-divider)",
 };
 
 const transitions = {
@@ -67,7 +73,8 @@ const transitions = {
   },
 };
 
-const baseTheme = {
+export const theme = {
+  colors,
   transitions,
   shadows,
   radii,
@@ -77,37 +84,4 @@ const baseTheme = {
   frame,
 };
 
-export type BaseTheme = typeof baseTheme;
-
-const lightTheme: DefaultTheme = {
-  ...baseTheme,
-  name: "light",
-  colors: {
-    cursor: _colors.black,
-    body: _colors.white,
-    text: {
-      500: "#6b7280",
-      1000: "#000000",
-    },
-    divider: "#d1d5db",
-  },
-};
-
-const darkTheme: DefaultTheme = {
-  ...baseTheme,
-  name: "dark",
-  colors: {
-    cursor: _colors.white,
-    body: _colors.black,
-    text: {
-      500: "#6b7280",
-      1000: "#000000",
-    },
-    divider: "#d1d5db",
-  },
-};
-
-export const themes = {
-  light: lightTheme,
-  dark: darkTheme,
-};
+export type Theme = typeof theme;

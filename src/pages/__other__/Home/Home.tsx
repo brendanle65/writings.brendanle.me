@@ -2,7 +2,7 @@
 import { useContext } from "react";
 
 // import other
-import { appStateContext } from "@contexts/AppStateContext";
+import { styleContext } from "@contexts/StyleContext";
 
 // import styled components
 import * as Styled from "./Home.components";
@@ -14,7 +14,12 @@ import * as Styled from "./Home.components";
  * @page
  */
 export function Home() {
-  const { toggleTheme } = useContext(appStateContext);
+  const { toggleTheme } = useContext(styleContext);
 
-  return <Styled.Toggle onClick={toggleTheme}>Click me to toggle theme!</Styled.Toggle>;
+  return (
+    <>
+      <Styled.Title>Hello World!</Styled.Title>
+      <Styled.Toggle onClick={toggleTheme}>Click me to toggle theme!</Styled.Toggle>
+    </>
+  );
 }

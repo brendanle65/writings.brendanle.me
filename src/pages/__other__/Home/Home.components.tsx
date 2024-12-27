@@ -8,3 +8,7 @@ import { Button } from "@components/other";
 export const Toggle = styled(Button)`
   font-size: 48px;
 `;
+
+export const Title = styled.h1`
+  color: ${(props) => props.theme.colors.text[500]};
+`;
