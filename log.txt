@@ -1,0 +1,8 @@
+todo:
+    1. initial theme does not respect session setting
+    2. flash of theme changing, make sure to change set theme before first paint
+
+notes:
+    1. During dev their may be a flash of the browser's default font family as it's being fetched.
+       At build time, the fonts will be bundeled. So, this issue will resolve itself.
+    

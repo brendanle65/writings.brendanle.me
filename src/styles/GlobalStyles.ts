@@ -6,22 +6,23 @@ export const GlobalStyles = createGlobalStyle`
   *,
   *::before,
   *::after {
-    font-family: ${(props) => props.theme.fonts.eb_garamond};
+    font-family: ${(props) => props.theme.fonts.eb_garamond} !important;
   }
 
   // 2. Set background color
-  html {
+  body {
     background-color: ${(props) => props.theme.colors.body};
     color: ${(props) => props.theme.colors.text[500]};
   }
 
   // 3. Set animation when theme changes
-  html {
+  body {
     transition-property: color, background-color;
-    transition-duration: 1s;
+    transition-duration: ${(props) => props.theme.transitions.theme.duration};
+    transition-timing-function: ${(props) => props.theme.transitions.theme.easing};
   }
 
-  // 4. Force body to span at least 100vh;
+  // 4. Force to fill screen
   body {
     min-height: 100vh;
     display: flex;

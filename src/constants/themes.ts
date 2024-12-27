@@ -46,13 +46,31 @@ const frame: Record<keyof typeof screens, { x: string; y: string }> = {
   },
 };
 
+const radii = {
+  full: "50%",
+};
+
+const shadows = {
+  md: "drop-shadow(0 10px 8px rgba(163, 160, 160, 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1))", // medium
+};
+
 // we don't pass colors to theme directly, we set theme depending on light/dark and to role (body, text, etc.)
 const _colors = {
   white: "#ffffff",
   black: "#000000",
 };
 
+const transitions = {
+  theme: {
+    duration: "1s",
+    easing: "ease-out",
+  },
+};
+
 const baseTheme = {
+  transitions,
+  shadows,
+  radii,
   fonts,
   screens,
   spacing,
@@ -63,7 +81,9 @@ export type BaseTheme = typeof baseTheme;
 
 const lightTheme: DefaultTheme = {
   ...baseTheme,
+  name: "light",
   colors: {
+    cursor: _colors.black,
     body: _colors.white,
     text: {
       500: "#6b7280",
@@ -75,7 +95,9 @@ const lightTheme: DefaultTheme = {
 
 const darkTheme: DefaultTheme = {
   ...baseTheme,
+  name: "dark",
   colors: {
+    cursor: _colors.white,
     body: _colors.black,
     text: {
       500: "#6b7280",

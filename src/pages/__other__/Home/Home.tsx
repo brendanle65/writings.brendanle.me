@@ -16,7 +16,5 @@ import * as Styled from "./Home.components";
 export function Home() {
   const { toggleTheme } = useContext(appStateContext);
 
-  return <Styled.Greeting onClick={toggleTheme}>Hello World</Styled.Greeting>;
+  return <Styled.Toggle onClick={toggleTheme}>Click me to toggle theme!</Styled.Toggle>;
 }
-
-// todo: image optiomization

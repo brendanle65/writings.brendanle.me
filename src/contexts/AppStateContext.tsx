@@ -28,7 +28,7 @@ export function AppStateProvider({ children }: AppStateProviderProps) {
 
   // Get the theme from storage; if none is found, check the user's preference; otherwise, default to light
   useLayoutEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
+    const savedTheme = sessionStorage.getItem("theme");
     const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
     if (savedTheme && ["dark", "light"].includes(savedTheme)) {
       setThemeName(savedTheme as keyof typeof themes);
@@ -41,7 +41,7 @@ export function AppStateProvider({ children }: AppStateProviderProps) {
   const toggleTheme = () => {
     const updatedTheme = themeName === "light" ? "dark" : "light";
     setThemeName(updatedTheme);
-    localStorage.setItem("theme", themeName);
+    sessionStorage.setItem("theme", themeName);
   };
 
   return (
