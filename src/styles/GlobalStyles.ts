@@ -15,21 +15,14 @@ export const GlobalStyles = createGlobalStyle`
     color: ${(props) => props.theme.colors.text[500]};
   }
 
-  // 3. Set animation when theme changes
-  body {
-    transition-property: color, background-color;
-    transition-duration: ${(props) => props.theme.transitions.theme.duration};
-    transition-timing-function: ${(props) => props.theme.transitions.theme.easing};
-  }
-
-  // 4. Force to fill screen
+  // 3. Force to fill screen
   body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
   }
 
-  // 5. Set correct frame spacing
+  // 4. Set correct frame spacing
   body {
     padding: ${(props) => `${props.theme.frame.mobile.y} ${props.theme.frame.mobile.x}`};
 

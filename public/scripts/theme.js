@@ -10,6 +10,7 @@ if (savedTheme && ["dark", "light"].includes(savedTheme)) {
 } else {
   body.classList.add("light");
 }
+
 /**
  * We toggle which CSS variables are activated by toggling a class name instead of using React state
  * because we cannot access the DOM (document or localStorage) during initialization.

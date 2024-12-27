@@ -1,8 +1,5 @@
-// import libraries
-import { useContext } from "react";
-
 // import other
-import { styleContext } from "@contexts/StyleContext";
+import { toggleTheme } from "@utils/toggleTheme";
 
 // import styled components
 import * as Styled from "./Home.components";
@@ -14,8 +11,6 @@ import * as Styled from "./Home.components";
  * @page
  */
 export function Home() {
-  const { toggleTheme } = useContext(styleContext);
-
   return (
     <>
       <Styled.Title>Hello World!</Styled.Title>

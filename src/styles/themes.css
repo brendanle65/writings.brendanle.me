@@ -1,7 +1,10 @@
-/* see `public/scripts/theme.js` for why we use css variables instead of defining the theme in `src/constants/theme.ts`*/
+/* See `public/scripts/theme.js` for why we use css variables instead of defining the theme in `src/constants/theme.ts`*/
 :root {
   --white: #ffffff;
   --black: #000000;
+
+  --theme-transition-duration: 0.4s;
+  --theme-transition-easing: ease-out;
 }
 
 .light {
@@ -24,4 +27,11 @@
   --theme-text-1000: var(--white);
 
   --theme-divider: #d1d5db;
+}
+
+/* Set transition when toggling, not before, to prevent flicker. */
+.transition {
+  transition-property: color, background-color;
+  transition-duration: var(--theme-transition-duration);
+  transition-timing-function: var(--theme-transition-easing);
 }

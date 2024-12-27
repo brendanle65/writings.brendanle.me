@@ -1,11 +1,12 @@
 // Import libraries
+import { ThemeProvider } from "styled-components";
 import { AppProps } from "next/app";
 import Head from "next/head";
-
-// Import other
 import { EB_Garamond, Cormorant_Garamond } from "next/font/google"; // Import Fonts (Optimized By NextJS)
 import localFont from "next/font/local";
-import { StyleProvider } from "@contexts/StyleContext";
+
+// Import other
+import { theme } from "@constants/theme";
 import { CursorStateProvider } from "@contexts/CursorContext";
 import { Cursor } from "@components/navigation";
 
@@ -51,7 +52,7 @@ export default function CustomApp({ Component, pageProps }: AppProps) {
       </Head>
 
       <div className={`${eb_garamond.variable} ${cormorant_garamond.variable} ${mazius_display.variable}`}>
-        <StyleProvider>
+        <ThemeProvider theme={theme}>
           <CursorStateProvider>
             <Component {...pageProps} />
             <Cursor />
@@ -59,7 +60,7 @@ export default function CustomApp({ Component, pageProps }: AppProps) {
 
           <ResetStyles />
           <GlobalStyles />
-        </StyleProvider>
+        </ThemeProvider>
       </div>
     </>
   );

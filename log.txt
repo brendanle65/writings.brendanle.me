@@ -9,14 +9,11 @@ notes:
        At build time, the fonts will be bundeled. So, this issue will resolve itself.
     2. See `public/scripts/theme.js` for details on why we choose the particular business logic that we did
        to set the theme.
-    3. During dev you may see the theme being transitioned when the page is first loaded, instead of 
-       set correctly initially. At build time, this behavior resolves on its own.
+    3. During dev you may see the theme being flickered. At build time, this behavior resolves on its own.
 
 commit: 
-    1. fixed bug where incorrect theme was being set when toggled
-    2. fixed bug where cursor styles were not being set
-    3. changed theme state from being stored in session storage to local storage for persistence across sessions
-    4. Added more sections to `log.txt`
+    1. Fixed bug where theme was being flashed on refresh
+    2. Got rid of StyleContext - not needed
     
 
 

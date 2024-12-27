@@ -68,8 +68,8 @@ const colors = {
 
 const transitions = {
   theme: {
-    duration: "1s",
-    easing: "ease-out",
+    duration: "var(--theme-transition-duration)",
+    easing: "var(--theme-transition-easing)",
   },
 };
 
