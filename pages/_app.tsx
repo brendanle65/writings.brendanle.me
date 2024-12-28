@@ -6,7 +6,7 @@ import { EB_Garamond, Cormorant_Garamond } from "next/font/google"; // Import Fo
 import localFont from "next/font/local";
 
 // Import other
-import { theme } from "@constants/theme";
+import { THEME } from "@constants/theme";
 import { CursorStateProvider } from "@contexts/CursorContext";
 import { Cursor } from "@components/navigation";
 
@@ -52,7 +52,7 @@ export default function CustomApp({ Component, pageProps }: AppProps) {
       </Head>
 
       <div className={`${eb_garamond.variable} ${cormorant_garamond.variable} ${mazius_display.variable}`}>
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={THEME}>
           <CursorStateProvider>
             <Component {...pageProps} />
             <Cursor />

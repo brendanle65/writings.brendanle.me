@@ -73,7 +73,7 @@ const transitions = {
   },
 };
 
-export const theme = {
+export const THEME = {
   colors,
   transitions,
   shadows,
@@ -84,4 +84,4 @@ export const theme = {
   frame,
 };
 
-export type Theme = typeof theme;
+export type ThemeType = typeof THEME;

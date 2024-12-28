@@ -1,5 +1,6 @@
 todo:
-    1. Explore headless strapi cms 
+    1. Add header and footer
+    2. Add layout of writing page
 
 ideas:
     1. ?
@@ -12,9 +13,11 @@ notes:
     3. During dev you may see the theme being flickered. At build time, this behavior resolves on its own.
 
 commit: 
-    1. Fixed bug where theme was being flashed on refresh
-    2. Got rid of StyleContext - not needed
+    1. Added axios
+    2. Described what pages were to be rendered via Strapi API
+    3. Populated writings page with proper data
     
-
-
+useful links:
+    1. https://keystrokecountdown.com/articles/remarkable/index.html
+    2. https://medium.com/oberonamsterdam/an-elegant-way-to-deal-with-rich-text-fields-in-react-66ff82518318
 

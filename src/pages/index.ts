@@ -1,2 +1,3 @@
-export { __404__ } from "./__other__/404/404";
-export { Home } from "./__other__/Home/Home";
+export { __404__ } from "./404/404";
+export { Home } from "./Home/Home";
+export { Writing } from "./Writing/Writing";
