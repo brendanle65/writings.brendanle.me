@@ -2,7 +2,7 @@
 import { WritingType } from "@typings/writing";
 
 // import styled components
-import * as Styled from "./Writing.components";
+import * as Styled from "./Writing.styled";
 
 /**
  * A writing page, renders (a blog post).

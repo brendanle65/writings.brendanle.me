@@ -1,5 +1,5 @@
 // import styled components
-import * as Styled from "./404.components";
+import * as Styled from "./404.styled";
 
 /**
  * The 404 page.

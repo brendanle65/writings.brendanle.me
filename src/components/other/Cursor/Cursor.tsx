@@ -7,7 +7,7 @@ import { useCursorPosition } from "@hooks/useCursorPosition";
 import { CursorState, cursorStateContext } from "@contexts/CursorContext";
 
 // import styled components
-import * as Styled from "./Cursor.components";
+import * as Styled from "./Cursor.styled";
 
 /**
  * A custom cursor element that follows the mouse position.

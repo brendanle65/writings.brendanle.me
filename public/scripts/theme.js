@@ -1,9 +1,13 @@
+// themes to cycle through in this order
+// should be the same as in `src/contexts/ThemeContext.tsx`
+const THEMES = ["light", "dark", "calm"];
+
 // this script detects which theme to use before the browser paints (prevents flicker)
 const body = document.querySelector("body");
 const savedTheme = localStorage.getItem("theme");
 const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-if (savedTheme && ["dark", "light"].includes(savedTheme)) {
+if (savedTheme && THEMES.includes(savedTheme)) {
   body.classList.add(savedTheme);
 } else if (prefersDark) {
   body.classList.add("dark");

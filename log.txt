@@ -1,6 +1,6 @@
 todo:
-    1. Add header and footer
-    2. Add layout of writing page
+    1. add infinite running animation to theme button
+    2. change cursor to polaroid selfie while hovering over about-the-writer
 
 ideas:
     1. ?
@@ -13,11 +13,22 @@ notes:
     3. During dev you may see the theme being flickered. At build time, this behavior resolves on its own.
 
 commit: 
-    1. Added axios
-    2. Described what pages were to be rendered via Strapi API
-    3. Populated writings page with proper data
+    1. Add fonts
+    2. Added AppHeader and necessary components
+    3. Renamed styled-component files to `[name].styled.ts`
+    4. Added ThemeContext to get theme names.
+    5. Updated theme logic to allow for cycling through multiple themes instead of toggling between just "light" and "dark"
+    6. Added animation
+       1. Add useAnimate hook
+       2. Added special animation class names for easy targeting: `animate-[name]`
+       3. Added animation files: `[name].animate.ts`
+    7. Change withHover to Hoverable component for better compatibility with styled-components
+    8. Reorganized `/components` folder
+    9. Added `/styles/mixins` folder for reusable css mixins
     
 useful links:
     1. https://keystrokecountdown.com/articles/remarkable/index.html
     2. https://medium.com/oberonamsterdam/an-elegant-way-to-deal-with-rich-text-fields-in-react-66ff82518318
+
+
 

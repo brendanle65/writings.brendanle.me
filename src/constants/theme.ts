@@ -2,6 +2,9 @@ const fonts = {
   eb_garamond: "var(--font-eb-garamond)",
   cormorant_garamond: "var(--font-cormorant-garamond)",
   mazius: "var(--font-mazius)",
+  coconat: "var(--font-coconat)",
+  absans: "var(--font-absans)",
+  noto_sans_mono: "var(--font-noto-sans-mono)",
 };
 
 const screens = {
@@ -19,33 +22,28 @@ const screens = {
   },
 };
 
-const spacing = {
-  xss: "2px", // extra extra small
-  xs: "4px", // extra small
-  sm: "8px", // small
-  md: "16px", // medium
-  lg: "24px", // large
-  xl: "32px", // extra large
-  xxl: "48px", // extra extra large
-};
-
 const frame: Record<keyof typeof screens, { x: string; y: string }> = {
   mobile: {
-    x: spacing.md,
-    y: spacing.lg,
+    x: "16px",
+    y: "24px",
   },
   tablet: {
-    x: spacing.xl,
-    y: spacing.xl,
+    x: "32px",
+    y: "32px",
   },
   laptop: {
-    x: "96px", // spacing is unique to frame, hence why we define it here and not in 'spacing' object.
-    y: "48px", // also unique
+    x: "96px",
+    y: "48px",
   },
 };
 
 const radii = {
   full: "50%",
+};
+
+const border = {
+  sm: "0.5px", // small
+  lg: "1.5px", // large
 };
 
 const shadows = {
@@ -58,10 +56,15 @@ const colors = {
     background: "var(--theme-cursor-background)",
     filter: "var(--theme-cursor-filter)",
   },
+  menu: "var(--theme-menu)",
   body: "var(--theme-body)",
   text: {
-    500: "var(--theme-text-500)",
-    1000: "var(--theme-text-1000)",
+    primary: "var(--theme-text-primary)",
+    accent: "var(--theme-text-accent)",
+    grays: {
+      500: "", // todo
+      1000: "", // todo
+    },
   },
   divider: "var(--theme-divider)",
 };
@@ -74,13 +77,13 @@ const transitions = {
 };
 
 export const THEME = {
+  border,
   colors,
   transitions,
   shadows,
   radii,
   fonts,
   screens,
-  spacing,
   frame,
 };
 

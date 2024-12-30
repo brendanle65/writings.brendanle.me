@@ -18,11 +18,11 @@ export const ResetStyles = createGlobalStyle`
     border: none;
     background: none;
     font-family: inherit;
-    color: ${(props) => props.theme.colors.text[1000]};
+    color: ${(props) => props.theme.colors.text.primary};
     line-height: inherit;
     letter-spacing: inherit;
     scroll-behavior: smooth;
-    font-size: 1rem;
+    font-size: inherit;
 
     // 3. Improve media defaults
     img,
@@ -45,6 +45,11 @@ export const ResetStyles = createGlobalStyle`
     h5,
     h6 {
       text-wrap: balance;
+    }
+
+    // 5. Remove default numbers and bullet points
+    ul, li {
+      list-style: none;
     }
   }
 `;

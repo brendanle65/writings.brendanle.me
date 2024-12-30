@@ -6,13 +6,12 @@ export const GlobalStyles = createGlobalStyle`
   *,
   *::before,
   *::after {
-    font-family: ${(props) => props.theme.fonts.eb_garamond} !important;
+    font-family: ${(props) => props.theme.fonts.eb_garamond};
   }
 
   // 2. Set background color
   body {
     background-color: ${(props) => props.theme.colors.body};
-    color: ${(props) => props.theme.colors.text[500]};
   }
 
   // 3. Force to fill screen
@@ -32,5 +31,10 @@ export const GlobalStyles = createGlobalStyle`
     @media (min-width: ${(props) => props.theme.screens.laptop.start}) {
       padding: ${(props) => `${props.theme.frame.laptop.y} ${props.theme.frame.laptop.x}`};
     }
+  }
+
+  // 5. Set base font-size
+  body {
+    font-size: 16px;
   }
 `;

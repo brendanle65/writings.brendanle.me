@@ -1,14 +1,13 @@
 // Import libraries
-import { ThemeProvider } from "styled-components";
 import { AppProps } from "next/app";
 import Head from "next/head";
-import { EB_Garamond, Cormorant_Garamond } from "next/font/google"; // Import Fonts (Optimized By NextJS)
+import { EB_Garamond, Cormorant_Garamond, Noto_Sans_Mono } from "next/font/google"; // Import Fonts (Optimized By NextJS)
 import localFont from "next/font/local";
 
 // Import other
-import { THEME } from "@constants/theme";
+import { ThemeProvider } from "@contexts/ThemeContext";
 import { CursorStateProvider } from "@contexts/CursorContext";
-import { Cursor } from "@components/navigation";
+import { Cursor } from "@components/other";
 
 // Import styles
 import "@styles/themes.css";
@@ -21,7 +20,23 @@ const mazius_display = localFont({
   variable: "--font-mazius",
 });
 
-// Configure fonts
+const coconat_display = localFont({
+  src: "../public/fonts/coconat/Coconat-Regular.woff2",
+  variable: "--font-coconat",
+});
+
+const absans_display = localFont({
+  src: "../public/fonts/absans/Absans-Regular.woff2",
+  variable: "--font-absans",
+});
+
+const noto_sans_mono = Noto_Sans_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-noto-sans-mono",
+  weight: ["400", "500"],
+});
+
 const eb_garamond = EB_Garamond({
   subsets: ["latin"],
   display: "swap",
@@ -51,8 +66,10 @@ export default function CustomApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       </Head>
 
-      <div className={`${eb_garamond.variable} ${cormorant_garamond.variable} ${mazius_display.variable}`}>
-        <ThemeProvider theme={THEME}>
+      <div
+        className={`${eb_garamond.variable} ${cormorant_garamond.variable} ${mazius_display.variable} ${coconat_display.variable} ${absans_display.variable} ${noto_sans_mono.variable}`}
+      >
+        <ThemeProvider>
           <CursorStateProvider>
             <Component {...pageProps} />
             <Cursor />
