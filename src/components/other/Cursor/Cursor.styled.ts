@@ -47,6 +47,14 @@ export const Cursor = styled.div<{ $state: CursorState; $extras?: CursorExtras }
         height: ${props.$extras.image?.height || "144px"};
         background-color: ${props.theme.colors.cursor.background};
       `;
+    } else if (props.$state === CursorState.HEADSHOT) {
+      return css`
+        width: 55px;
+        height: 60px;
+        background-color: ${props.theme.colors.cursor.background};
+        filter: ${props.theme.shadows.md};
+        transition-duration: 0;
+      `;
     }
   }}
 
@@ -61,4 +69,12 @@ export const Image = styled.img`
   height: 100%;
   object-fit: cover;
   filter: ${(props) => props.theme.shadows.md};
+`;
+
+export const Headshot = styled.img`
+  background-color: white;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  padding: 4px 4px 12px 4px;
 `;

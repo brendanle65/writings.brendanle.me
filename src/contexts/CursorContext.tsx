@@ -16,6 +16,9 @@ export enum CursorState {
 
   // When you want to turn the cursor into an image
   IMAGE = "IMAGE",
+
+  // When you want to turn the cursor in a a polaroid headshot image
+  HEADSHOT = "HEADSHOT",
 }
 
 /** Extra information needed for updating/styling cursor. */

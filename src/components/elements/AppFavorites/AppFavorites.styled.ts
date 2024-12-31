@@ -28,6 +28,7 @@ export const Link = styled(NextLink)<{ $font: keyof DefaultTheme["fonts"]; $size
   transition: all 0.2s ease-out;
 
   &:hover {
-    transform: translate(${(props) => (props.$size === "small" ? "-5px" : "-35px")}) scale(1.125);
+    // !important tag is to override any conflicting motion styles
+    transform: translate(${(props) => (props.$size === "small" ? "-5px" : "-35px")}) scale(1.125) !important;
   }
 `;

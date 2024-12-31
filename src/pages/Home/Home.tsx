@@ -19,7 +19,7 @@ export function Home() {
       <AppHeader />
 
       {/** got ahead of myself - ignore this chicken scratch */}
-      {/* 
+
       <Styled.Container>
         <div>
           <Styled.Latest>Latest:</Styled.Latest>
@@ -40,7 +40,7 @@ export function Home() {
 
       <Styled.Favorites size="small" favorites={DUMMY_FAVORITES} />
 
-      <Styled.Socials /> */}
+      <Styled.Socials size="small" />
     </>
   );
 }

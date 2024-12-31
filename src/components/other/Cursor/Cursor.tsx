@@ -26,6 +26,9 @@ export function Cursor() {
         {cursorState === CursorState.IMAGE && (
           <Styled.Image src={cursorExtras.image.src} alt={cursorExtras.image.alt} />
         )}
+        {cursorState === CursorState.HEADSHOT && (
+          <Styled.Headshot src="/headshot.png" alt="professional headshot of the author" />
+        )}
       </Styled.Cursor>
     </Styled.Wrapper>
   );

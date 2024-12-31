@@ -3,6 +3,7 @@ import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 
 // import other
+import { CursorState } from "@contexts/CursorContext";
 import { Hoverable } from "@components/other";
 import { Menu } from "./(Menu)/Menu";
 
@@ -29,7 +30,7 @@ export function AppHeader() {
           <Hoverable as={Styled.OpenMenuButton} onClick={open}>
             menu
           </Hoverable>
-          <Hoverable as={Styled.AboutLink} href="/writings/about-the-writer">
+          <Hoverable as={Styled.AboutLink} href="/writings/about-the-writer" $cursorState={CursorState.HEADSHOT}>
             about the writer
           </Hoverable>
         </Styled.Nav>
