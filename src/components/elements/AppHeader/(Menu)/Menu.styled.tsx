@@ -17,6 +17,10 @@ export const Menu = styled.div`
   padding: ${(props) => `${props.theme.frame.mobile.y} ${props.theme.frame.mobile.x}`};
 
   @media (min-width: ${(props) => props.theme.screens.tablet.start}) {
+    padding: ${(props) => `${props.theme.frame.tablet.y} ${props.theme.frame.tablet.x}`};
+  }
+
+  @media (min-width: ${(props) => props.theme.screens.laptop.start}) {
     display: none;
   }
 `;
@@ -49,6 +53,10 @@ export const MenuHeader = styled.header`
 export const MenuLinks = styled.div`
   padding: 64px 0;
   text-align: right;
+
+  @media (min-width: ${(props) => props.theme.screens.tablet.start}) {
+    text-align: center;
+  }
 `;
 
 export const ThemeButton = styled(CycleThemeButton)`

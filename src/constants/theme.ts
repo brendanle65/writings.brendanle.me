@@ -22,10 +22,10 @@ const screens = {
   },
 };
 
-const frame: Record<keyof typeof screens, { x: string; y: string }> = {
+const frame: Record<keyof typeof screens, { x: string; y: string; w?: string }> = {
   mobile: {
-    x: "16px",
-    y: "24px",
+    x: "16px", // horizontal margin
+    y: "24px", // vertical margin
   },
   tablet: {
     x: "32px",
@@ -34,6 +34,7 @@ const frame: Record<keyof typeof screens, { x: string; y: string }> = {
   laptop: {
     x: "96px",
     y: "48px",
+    w: "40%", // width of main content (width of center content box)
   },
 };
 

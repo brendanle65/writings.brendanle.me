@@ -2,22 +2,13 @@
 import { AppSocials, AppFavorites } from "@components/elements";
 import { useAnimate } from "@hooks/useAnimate";
 import { Hoverable } from "@components/other";
-import { DUMMY_FAVORITES } from "@constants/dummy";
+import { DUMMY_FAVORITES, DUMMY_ABOUT } from "@constants/dummy";
 
 // import animations
 import { enter, exit } from "./Menu.animate";
 
 // import styled components
 import * as Styled from "./Menu.styled";
-
-const FAVORITES = [
-  {
-    text: "About The Writer",
-    href: "/",
-    font: "eb_garamond",
-  },
-  ...DUMMY_FAVORITES,
-];
 
 interface MenuProps {
   // Function to call to close the menu
@@ -44,10 +35,10 @@ export function Menu({ close }: MenuProps) {
       </Styled.MenuHeader>
 
       <Styled.MenuLinks>
-        <AppFavorites size="large" favorites={FAVORITES} />
+        <AppFavorites size="large" favorites={[DUMMY_ABOUT, ...DUMMY_FAVORITES]} />
       </Styled.MenuLinks>
 
-      <AppSocials as="footer" size="large" />
+      <AppSocials as="footer" size="large" align="end" />
 
       <Styled.MenuBackground className="animate-menu-background" />
     </Styled.Menu>

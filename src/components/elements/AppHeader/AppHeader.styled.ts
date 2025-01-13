@@ -16,7 +16,7 @@ export const OpenMenuButton = styled.button`
   border-bottom: 1.5px solid ${(props) => props.theme.colors.text.primary};
   font-size: 20px;
 
-  @media (min-width: ${(props) => props.theme.screens.tablet.start}) {
+  @media (min-width: ${(props) => props.theme.screens.laptop.start}) {
     display: none;
   }
 `;
@@ -26,7 +26,7 @@ export const Logo = styled.div`
   font-size: 30px;
   height: 30px;
 
-  @media (min-width: ${(props) => props.theme.screens.tablet.start}) {
+  @media (min-width: ${(props) => props.theme.screens.laptop.start}) {
     font-size: 35px;
     height: 35px;
   }
@@ -35,7 +35,7 @@ export const Logo = styled.div`
 export const AboutLink = styled(Link)`
   display: none;
 
-  @media (min-width: ${(props) => props.theme.screens.tablet.start}) {
+  @media (min-width: ${(props) => props.theme.screens.laptop.start}) {
     display: block;
   }
 `;
@@ -43,12 +43,12 @@ export const AboutLink = styled(Link)`
 export const PinnedThemeButton = styled(CycleThemeButton)`
   display: none;
 
-  @media (min-width: ${(props) => props.theme.screens.tablet.start}) {
+  @media (min-width: ${(props) => props.theme.screens.laptop.start}) {
     display: block;
     font-size: 14px;
     position: absolute;
     left: 50%;
-    transform: translate(-50%);
+    transform: translateX(-50%);
     top: 10px;
   }
 `;

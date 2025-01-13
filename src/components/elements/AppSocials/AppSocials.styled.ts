@@ -7,22 +7,34 @@ import { AppSocialsProps } from "./AppSocials";
 import { hoverUnderlineMixin } from "@styles/mixins/hoverUnderlineMixin";
 
 type SizeProp = AppSocialsProps["size"];
+type AlignProp = AppSocialsProps["align"];
 
 // Exists so we can can target in mixin by name
 export const SocialName = styled.div``;
 
-export const Container = styled.div`
+export const Container = styled.div<{ $size: SizeProp; $align: AlignProp }>`
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: ${(props) => (props.$size === "small" ? "4px" : "6px")};
+  align-items: ${(props) => {
+    if (props.$align === "left") {
+      return "flex-start";
+    } else if (props.$align === "center") {
+      return "center";
+    } else if (props.$align === "end") {
+      return "flex-end";
+    }
+  }};
 `;
 
 export const List = styled.ul<{ $size: SizeProp }>`
   display: flex;
-  font-size: ${(props) => (props.$size === "small" ? "14px" : "18px")};
+  font-size: ${(props) => (props.$size === "small" ? "16px" : "18px")};
   gap: 10px;
-  width: max-content;
-  margin-left: auto;
+
+  @media (min-width: ${(props) => props.theme.screens.tablet.start}) {
+    font-size: ${(props) => (props.$size === "small" ? "14px" : "18px")};
+  }
 `;
 
 export const SiteLink = styled.a`

@@ -1,9 +1,12 @@
 todo:
-    1. add main page layout
-    2. add blog page layout
+    1. add text animations
+    2. get rid of polaroid image - kinda of tacky, just use plain image instead
+    3. add real content (dummy data to local data)
+    4. add blog page layout
 
 ideas:
-    1. ?
+    1. featured highlights for some writings, similar to annotations
+    2. change highlight animation to resemble more of an actual highlighter
 
 notes:
     1. During dev their may be a flash of the browser's default font family as it's being fetched.
@@ -11,14 +14,20 @@ notes:
     2. See `public/scripts/theme.js` for details on why we choose the particular business logic that we did
        to set the theme.
     3. During dev you may see the theme being flickered. At build time, this behavior resolves on its own.
+    4. The AppLayout component is included on each page rather than being centrally located in `pages/_app.ts`.
+       This is to ensure that the page animation scope (ref) is set individually at the page level,
+       instead of managing it globally through state higher up in the component tree. 
 
 commit: 
-    1. add headshot cursor to about-the-writer link
-    2. fixed bug where favorite link not hover effect not applying
+    1. added AppLayout component
+    2. added home page layout with rough elements
+    3. got rid of dribbble social link
+    4. reorganized content and updated writing schema
     
 useful links:
     1. https://keystrokecountdown.com/articles/remarkable/index.html
     2. https://medium.com/oberonamsterdam/an-elegant-way-to-deal-with-rich-text-fields-in-react-66ff82518318
+
 
 
 

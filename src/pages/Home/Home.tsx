@@ -1,8 +1,15 @@
-// import other
-import { AppHeader } from "@components/elements";
+// import libraries
+import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 
 // import other
-import { DUMMY_FAVORITES } from "@constants/dummy";
+import { AppFavorites } from "@components/elements";
+import { AppLayout } from "@components/layouts";
+import { Image } from "./(Image)/Image";
+import { Excerpt } from "./(Excerpt)/Excerpt";
+import { Feed } from "./(Feed)/Feed";
+import { DUMMY_FAVORITES, DUMMY_WRITINGS } from "@constants/dummy";
+import { WritingType } from "@typings/writing";
 
 // import styled components
 import * as Styled from "./Home.styled";
@@ -14,33 +21,47 @@ import * as Styled from "./Home.styled";
  * @page
  */
 export function Home() {
+  const [isAsidesOpen, setIsAsidesOpen] = useState(false);
+  const [activePost, setActivePost] = useState<WritingType>(null);
+
+  const open = () => setIsAsidesOpen(true);
+  const close = () => setIsAsidesOpen(false);
+
   return (
     <>
-      <AppHeader />
+      <AppLayout>
+        <Feed
+          writings={DUMMY_WRITINGS}
+          onPostEnter={(post) => {
+            open();
+            setActivePost(post);
+            // open aside if hovering over post
+          }}
+          onPostLeave={close}
+          // close aside if not hovering over post
+        />
+      </AppLayout>
 
-      {/** got ahead of myself - ignore this chicken scratch */}
+      <Styled.Fixed
+        onMouseEnter={open}
+        onMouseLeave={close}
+        // keep asides open if hovering over image or featured excerpt (overrides onPostLeave)
+      >
+        <Styled.Aside>
+          <AnimatePresence mode="wait">{isAsidesOpen && <Image src={activePost.image.url} />}</AnimatePresence>
 
-      <Styled.Container>
-        <div>
-          <Styled.Latest>Latest:</Styled.Latest>
+          <div
+            onMouseEnter={close}
+            // close aside if hovering over favorites
+          >
+            <AppFavorites size="small" favorites={DUMMY_FAVORITES} />
+          </div>
+        </Styled.Aside>
 
-          {DUMMY_FAVORITES.map(({ text, font }, idx) => (
-            <Styled.Post $font={font} key={idx}>
-              <Styled.Title>{text}</Styled.Title>
-              <Styled.Blurb>It Was The Best of Times and The Wo...</Styled.Blurb>
-            </Styled.Post>
-          ))}
-        </div>
-
-        <Styled.Legal>
-          <div>© 2024 Brendan's Writings</div>
-          <div>Designed in Figma and coded in VS Code, and by yours truly.</div>
-        </Styled.Legal>
-      </Styled.Container>
-
-      <Styled.Favorites size="small" favorites={DUMMY_FAVORITES} />
-
-      <Styled.Socials size="small" />
+        <Styled.Aside>
+          <AnimatePresence mode="wait">{isAsidesOpen && <Excerpt content={activePost.excerpt} />}</AnimatePresence>
+        </Styled.Aside>
+      </Styled.Fixed>
     </>
   );
 }

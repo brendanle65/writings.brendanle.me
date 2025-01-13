@@ -1,54 +1,29 @@
 // import libraries
 import styled from "styled-components";
 
-import { AppSocials, AppFavorites } from "@components/elements";
+export const Fixed = styled.div`
+  display: none;
 
-/** got ahead of myself - ignore this chicken scratch */
-
-export const Latest = styled.h1`
-  margin-top: 42px;
-  font-size: 24px;
+  @media (min-width: ${(props) => props.theme.screens.laptop.start}) {
+    display: flex;
+    width: calc(100vw - ${(props) => props.theme.frame.laptop.x} * 2);
+    position: fixed;
+    left: ${(props) => props.theme.frame.laptop.x};
+    bottom: ${(props) => props.theme.frame.laptop.y};
+    pointer-events: none;
+    justify-content: space-between;
+  }
 `;
 
-export const Post = styled.div<{ $font: any }>`
-  font-family: ${(props) => props.theme.fonts[props.$font]};
-`;
+export const Aside = styled.aside`
+  width: calc((100% - ${(props) => props.theme.frame.laptop.w}) / 2);
+  pointer-events: all;
 
-export const Title = styled.h1`
-  margin-top: 20px;
-  font-size: 32px;
-  font-family: inherit;
-`;
+  &:nth-child(1) {
+    padding-right: 32px;
+  }
 
-export const Blurb = styled.p`
-  margin-top: 4px;
-  font-size: 16px;
-  font-family: inherit;
-`;
-
-export const Container = styled.div`
-  margin-left: auto;
-  margin-right: auto;
-  width: max-content;
-`;
-
-export const Legal = styled.div`
-  margin-top: 48px;
-  font-size: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  text-align: center;
-`;
-
-export const Favorites = styled(AppFavorites)`
-  position: fixed;
-  left: 96px;
-  bottom: 48px;
-`;
-
-export const Socials = styled(AppSocials)`
-  position: fixed;
-  right: 96px;
-  bottom: 48px;
+  &:nth-child(2) {
+    padding-left: 32px;
+  }
 `;

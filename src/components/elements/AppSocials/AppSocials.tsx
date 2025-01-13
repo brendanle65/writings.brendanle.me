@@ -8,7 +8,11 @@ import { Hoverable } from "@components/other/Hoverable/Hoverable";
 import * as Styled from "./AppSocials.styled";
 
 export interface AppSocialsProps extends InheritStyledProps {
+  // how big to render list
   size: "large" | "small";
+
+  // which position to render list
+  align: "left" | "center" | "end";
 }
 
 /**
@@ -16,9 +20,9 @@ export interface AppSocialsProps extends InheritStyledProps {
  *
  * @component
  */
-export function AppSocials({ size, ...props }: AppSocialsProps) {
+export function AppSocials({ size, align, ...props }: AppSocialsProps) {
   return (
-    <Styled.Container {...props}>
+    <Styled.Container $size={size} $align={align} {...props}>
       <Styled.List $size={size}>
         <li>
           <Hoverable as={Styled.SiteLink} href="https://work.brendanle.me" className="animate-socials-link">

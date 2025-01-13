@@ -1,22 +1,19 @@
 // import libraries
-import { InheritStyledProps, DefaultTheme } from "styled-components";
+import { InheritStyledProps } from "styled-components";
 
 // import other
 import { Hoverable } from "@components/other";
 
 // import styled components
 import * as Styled from "./AppFavorites.styled";
+import { WritingType } from "@typings/writing";
 
 export interface AppFavoriteProps extends InheritStyledProps {
+  // how big to render list
   size: "large" | "small";
 
-  favorites: {
-    text: string;
-
-    font: keyof DefaultTheme["fonts"];
-
-    href: string;
-  }[];
+  // which writings to list
+  favorites: WritingType[];
 }
 
 /**
@@ -24,18 +21,23 @@ export interface AppFavoriteProps extends InheritStyledProps {
  *
  * @component
  */
-export function AppFavorites({ size, favorites, ...props }: AppFavoriteProps) {
+export function AppFavorites({ size, favorites }: AppFavoriteProps) {
   return (
-    <Styled.Container {...props}>
+    <Styled.Container>
       <Styled.Heading $size={size} className="animate-favorites-heading">
         Favorites:
       </Styled.Heading>
       <Styled.List $size={size}>
-        {favorites.map(({ text, font, href }, idx) => (
-          <li key={idx}>
+        {favorites.map((props) => (
+          <li key={props.id}>
             <Hoverable>
-              <Styled.Link href={href} $font={font} $size={size} className="animate-favorites-link">
-                {text}
+              <Styled.Link
+                href={`/writings/${props.slug}`}
+                $font={props.fonts.title}
+                $size={size}
+                className="animate-favorites-link"
+              >
+                {props.title}
               </Styled.Link>
             </Hoverable>
           </li>

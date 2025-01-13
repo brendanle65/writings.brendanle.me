@@ -1,7 +1,21 @@
+import { DefaultTheme } from "styled-components";
+
 // Define a type alias for plain strings representing rich text in markdown format
 type RichTextMarkdown = string;
 
 export type WritingType = {
+  // Unique identifier
+  id: string;
+
+  // Name of font-families
+  fonts: {
+    // To use to display title
+    title: keyof DefaultTheme["fonts"];
+
+    // To use to display body
+    body: keyof DefaultTheme["fonts"];
+  };
+
   // Title of the piece of writing
   title: string;
 
@@ -29,6 +43,9 @@ export type WritingType = {
   // Date when the writing was published
   date: string;
 
+  // Url slug to the writings
+  slug: string;
+
   image: {
     // URL of the image relative to API
     url: string;
@@ -39,6 +56,9 @@ export type WritingType = {
     // Alt text for the image (for accessibility)
     alt: string;
   };
+
+  // Featured excerpt of the writing to preview
+  excerpt: string;
 
   annotations: {
     // The number this annotation belongs to
