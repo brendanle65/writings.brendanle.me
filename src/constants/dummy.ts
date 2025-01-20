@@ -9,7 +9,17 @@ export const DUMMY_ABOUT: WritingType = {
     title: "eb_garamond",
     body: "eb_garamond",
   },
+  image: {
+    url: "https://images.unsplash.com/photo-1719338204243-1e5561635bf4?q=80&w=1926&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    alt: "",
+    caption: "",
+  },
   slug: "/",
+  excerpt: `
+    Why didn't you tell me? <br/>
+    Before the mast broke.
+  `,
+  description: "It Was The Best of Times and The Worst of Times...sdsadsdsdds",
 } as WritingType;
 
 // Temporary: will write code to fetch data from backend at build time

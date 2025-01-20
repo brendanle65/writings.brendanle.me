@@ -14,6 +14,9 @@ export interface AppFavoriteProps extends InheritStyledProps {
 
   // which writings to list
   favorites: WritingType[];
+
+  // function to call when link is hovered over
+  onLinkEnter?: (post: WritingType) => void;
 }
 
 /**
@@ -21,23 +24,24 @@ export interface AppFavoriteProps extends InheritStyledProps {
  *
  * @component
  */
-export function AppFavorites({ size, favorites }: AppFavoriteProps) {
+export function AppFavorites({ size, favorites, onLinkEnter }: AppFavoriteProps) {
   return (
     <Styled.Container>
       <Styled.Heading $size={size} className="animate-favorites-heading">
         Favorites:
       </Styled.Heading>
       <Styled.List $size={size}>
-        {favorites.map((props) => (
-          <li key={props.id}>
+        {favorites.map((writing) => (
+          <li key={writing.id}>
             <Hoverable>
               <Styled.Link
-                href={`/writings/${props.slug}`}
-                $font={props.fonts.title}
+                onMouseEnter={() => onLinkEnter && onLinkEnter(writing)}
+                href={`/writings/${writing.slug}`}
+                $font={writing.fonts.title}
                 $size={size}
                 className="animate-favorites-link"
               >
-                {props.title}
+                {writing.title}
               </Styled.Link>
             </Hoverable>
           </li>

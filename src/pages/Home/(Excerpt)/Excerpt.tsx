@@ -19,10 +19,10 @@ interface ExcerptProps {
 export function Excerpt(props: ExcerptProps) {
   return (
     <Styled.Container
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0, transition: { delay: 0.5 } }}
-      as={motion.div}
+    // initial={{ opacity: 0 }}
+    // animate={{ opacity: 1 }}
+    // exit={{ opacity: 0, transition: { delay: 0.5 } }}
+    // as={motion.div}
     >
       <>
         <Styled.Heading>Featured Excerpt:</Styled.Heading>

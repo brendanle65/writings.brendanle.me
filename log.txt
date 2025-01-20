@@ -19,10 +19,8 @@ notes:
        instead of managing it globally through state higher up in the component tree. 
 
 commit: 
-    1. added AppLayout component
-    2. added home page layout with rough elements
-    3. got rid of dribbble social link
-    4. reorganized content and updated writing schema
+    1. added useMediaQuery hook
+    2. added scramble and unscramble animation to Home image component.
     
 useful links:
     1. https://keystrokecountdown.com/articles/remarkable/index.html

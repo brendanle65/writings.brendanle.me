@@ -14,9 +14,6 @@ interface FeedProps {
 
   // Function to run when post is hovered over, provides the id of the currently selected post
   onPostEnter: (post: WritingType) => void;
-
-  // Function to run when post is dehovered.
-  onPostLeave: () => void;
 }
 
 /**
@@ -25,7 +22,7 @@ interface FeedProps {
  * @private
  * @component
  */
-export const Feed = ({ writings, onPostEnter, onPostLeave }: FeedProps) => {
+export const Feed = ({ writings, onPostEnter }: FeedProps) => {
   // Articles' metadata grouped by their date (formatted as "MMM. YYYY") from latest to oldest.
   const grouped = (() => {
     // Sort by date
@@ -48,8 +45,6 @@ export const Feed = ({ writings, onPostEnter, onPostLeave }: FeedProps) => {
     return dateBlocks;
   })();
 
-  console.log(grouped);
-
   return (
     <Styled.GroupList>
       {Object.keys(grouped).map((date, idx) => (
@@ -58,7 +53,7 @@ export const Feed = ({ writings, onPostEnter, onPostLeave }: FeedProps) => {
 
           <Styled.PostList>
             {grouped[date].map((post) => (
-              <Hoverable key={post.id} onMouseEnter={() => onPostEnter(post)} onMouseLeave={() => onPostLeave()}>
+              <Hoverable key={post.id} onMouseEnter={() => onPostEnter(post)}>
                 <Link href="/">
                   <Styled.Post $font={post.fonts.title}>
                     <Styled.Title>{post.title}</Styled.Title>
