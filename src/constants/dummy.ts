@@ -15,10 +15,7 @@ export const DUMMY_ABOUT: WritingType = {
     caption: "",
   },
   slug: "/",
-  excerpt: `
-    Why didn't you tell me? <br/>
-    Before the mast broke.
-  `,
+  excerpt: "nothing to see",
   description: "It Was The Best of Times and The Worst of Times...sdsadsdsdds",
 } as WritingType;
 
@@ -39,8 +36,18 @@ export const DUMMY_WRITINGS: WritingType[] = [
     },
     slug: "/",
     excerpt: `
-      Why didn't you tell me? <br/>
+      Why didn't you tell me?
       Before the mast broke.
+      Before the water rushed in.
+      Before you capsized.
+      
+      I could have towed you along.
+      Don't worry about the load.
+      Big cargo ships
+      need tugboats all the time.
+
+      But with you gone,
+      now, you tug at me.
     `,
     description: "It Was The Best of Times and The Worst of Times...sdsadsdsdds",
   },
@@ -58,9 +65,7 @@ export const DUMMY_WRITINGS: WritingType[] = [
       caption: "",
     },
     slug: "/",
-    excerpt: `
-      Testing
-    `,
+    excerpt: "hello world",
     description: "It Was The Best of Times.",
   },
   {
@@ -77,9 +82,7 @@ export const DUMMY_WRITINGS: WritingType[] = [
       caption: "",
     },
     slug: "/",
-    excerpt: `
-      Testing
-    `,
+    excerpt: "hello",
     description: "It Was The Best of Times and The Worst of Times.",
   },
   {
@@ -96,9 +99,7 @@ export const DUMMY_WRITINGS: WritingType[] = [
       caption: "",
     },
     slug: "/",
-    excerpt: `
-      Testing
-    `,
+    excerpt: "more testing",
     description: "It Was The Best of Times and The Worst of Times...sdsadsdsdds",
   },
 ] as WritingType[];

@@ -21,6 +21,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
+    "remarkable": "^2.0.1",
     "styled-components": "^6.1.13"
   },
   "devDependencies": {
@@ -28,6 +29,7 @@
     "@types/node": "^22.10.2",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
+    "@types/remarkable": "^2.0.8",
     "typescript": "^5.7.2"
   }
 }

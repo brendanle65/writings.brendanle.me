@@ -33,62 +33,11 @@ export function Image({ src: currentSrc }: ImageProps) {
   const indexRef = useRef<number>(0);
   const controlsRef = useRef<AnimationPlaybackControls>(null);
 
-  // hide all visible squares
-  function hide({ duration, ...options }: ValueAnimationTransition<number>) {
-    const scaled = duration * (indexRef.current / GRID_LENGTH); // percentage of cells to hide
-
-    controlsRef.current = animate(indexRef.current, 0, {
-      duration: scaled,
-      onUpdate(value) {
-        const current = Number(value.toFixed(0));
-
-        // (current !== GRID_LENGTH - 1) prevents a bug where one square animates
-        // incorrectly when using a delay. Without this check, the delay keeps calling
-        // onUpdate with the indexRef.current value, causing the animation to start
-        // prematurely while waiting to animate down to zero.
-        while (indexRef.current >= current && current !== GRID_LENGTH - 1) {
-          const randomIdx = sequenceRef.current[indexRef.current--];
-          cellsRef.current[randomIdx].style.opacity = "1";
-        }
-
-        if (indexRef.current < 0) {
-          sequenceRef.current = getSequence();
-          indexRef.current = 0; // prevent over indexing
-        }
-      },
-      ...options,
-    });
-  }
-
-  // reveal all hidden squares
-  function reveal({ duration, ...options }: ValueAnimationTransition<number>) {
-    const scaled = duration * (1 - indexRef.current / GRID_LENGTH); // percentage of cells to reveal
-
-    controlsRef.current = animate(indexRef.current, GRID_LENGTH, {
-      duration: scaled,
-      onUpdate(value) {
-        const current = Number(value.toFixed(0));
-
-        while (indexRef.current < current) {
-          const randomIdx = sequenceRef.current[indexRef.current++];
-          cellsRef.current[randomIdx].style.opacity = "0";
-        }
-
-        if (indexRef.current >= GRID_LENGTH) {
-          sequenceRef.current = getSequence();
-          indexRef.current = GRID_LENGTH - 1; // prevent over indexing
-        }
-      },
-      ...options,
-    });
-  }
-
   useEffect(() => {
     // stop any loose animations
     controlsRef.current?.stop();
 
     if (isLaptop) {
-      console.log("laptop running");
       const isEntering = (!storedSrc && currentSrc) || storedSrc === currentSrc;
       const isExiting = storedSrc && !currentSrc;
       const isTransitioning = storedSrc && currentSrc;
@@ -119,9 +68,59 @@ export function Image({ src: currentSrc }: ImageProps) {
     }
 
     return () => controlsRef.current?.stop();
-  }, [currentSrc]);
+  }, [currentSrc, isLaptop]);
 
-  // extra to helpers later
+  // hide all visible squares
+  function hide({ duration, ...options }: Omit<ValueAnimationTransition<number>, "onUpdate">) {
+    const scaled = duration * (indexRef.current / GRID_LENGTH); // percentage of cells to hide
+
+    controlsRef.current = animate(indexRef.current, 0, {
+      duration: scaled,
+      onUpdate(value) {
+        const current = Number(value.toFixed(0));
+
+        // (current !== GRID_LENGTH - 1) prevents a bug where one square animates
+        // incorrectly when using a delay. Without this check, the delay keeps calling
+        // onUpdate with the indexRef.current value, causing the animation to start
+        // prematurely while waiting to animate down to zero.
+        while (indexRef.current >= current && current !== GRID_LENGTH - 1) {
+          const randomIdx = sequenceRef.current[indexRef.current--];
+          cellsRef.current[randomIdx].style.opacity = "1";
+        }
+
+        if (indexRef.current < 0) {
+          sequenceRef.current = getSequence();
+          indexRef.current = 0; // prevent over indexing
+        }
+      },
+      ...options,
+    });
+  }
+
+  // reveal all hidden squares
+  function reveal({ duration, ...options }: Omit<ValueAnimationTransition<number>, "onUpdate">) {
+    const scaled = duration * (1 - indexRef.current / GRID_LENGTH); // percentage of cells to reveal
+
+    controlsRef.current = animate(indexRef.current, GRID_LENGTH, {
+      duration: scaled,
+      onUpdate(value) {
+        const current = Number(value.toFixed(0));
+
+        while (indexRef.current < current) {
+          const randomIdx = sequenceRef.current[indexRef.current++];
+          cellsRef.current[randomIdx].style.opacity = "0";
+        }
+
+        if (indexRef.current >= GRID_LENGTH) {
+          sequenceRef.current = getSequence();
+          indexRef.current = GRID_LENGTH - 1; // prevent over indexing
+        }
+      },
+      ...options,
+    });
+  }
+
+  // get a random order to animate the cells
   function getSequence() {
     return Array.from({ length: GRID_LENGTH }, (_, i) => i).sort(() => Math.random() - 0.5);
   }

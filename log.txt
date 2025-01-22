@@ -1,8 +1,9 @@
 todo:
-    1. add text animations
+    1. add blog page layout
     2. get rid of polaroid image - kinda of tacky, just use plain image instead
     3. add real content (dummy data to local data)
-    4. add blog page layout
+    4. fix excerpt scramble component
+    5. rewrite home image component to be more pure (no refs inside animation functions)
 
 ideas:
     1. featured highlights for some writings, similar to annotations
@@ -19,13 +20,13 @@ notes:
        instead of managing it globally through state higher up in the component tree. 
 
 commit: 
-    1. added useMediaQuery hook
-    2. added scramble and unscramble animation to Home image component.
+    1. added remarkable
+    2. added scramble animation to exceprt component
     
 useful links:
     1. https://keystrokecountdown.com/articles/remarkable/index.html
     2. https://medium.com/oberonamsterdam/an-elegant-way-to-deal-with-rich-text-fields-in-react-66ff82518318
-
-
+    3. https://www.npmjs.com/package/remarkable
+    4. https://codepen.io/dssssewqes/pen/qPmLMr
 
 
