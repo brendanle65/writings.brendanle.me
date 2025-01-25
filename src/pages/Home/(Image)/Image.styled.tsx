@@ -11,7 +11,6 @@ export const Container = styled.div`
 export const Cell = styled.div`
   background-color: ${(props) => props.theme.colors.body};
 
-  // better way to prevent flicker
   transition-property: background-color;
   transition-duration: ${(props) => props.theme.transitions.theme.duration};
   transition-timing-function: ${(props) => props.theme.transitions.theme.easing};

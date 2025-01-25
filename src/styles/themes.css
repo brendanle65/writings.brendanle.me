@@ -2,8 +2,10 @@
 :root {
   --white: #ffffff;
   --black: #000000;
-  --red: #fb0202;
 
+  --gray: #777777;
+  --off-red: #fb0202;
+  --imperial-red: #fd4949;
   --night: #101010;
   --jet: #292929;
   --dark-slate-gray: #2f4f4f;
@@ -11,6 +13,7 @@
   --platinum: #e1e1e1;
   --aquamarine: #6cf2b8;
   --gunmetal: #264040;
+  --silver: #aaaaaa;
 
   --theme-transition-duration: 0.4s;
   --theme-transition-easing: ease-out;
@@ -23,9 +26,8 @@
   --theme-menu: var(--white-smoke);
   --theme-body: var(--white);
   --theme-text-primary: var(--black);
-  --theme-text-accent: var(--red);
-
-  --theme-divider: #d1d5db;
+  --theme-text-accent: var(--off-red);
+  --theme-text-muted: var(--gray);
 }
 
 .dark {
@@ -35,9 +37,8 @@
   --theme-menu: var(--jet);
   --theme-body: var(--night);
   --theme-text-primary: var(--white);
-  --theme-text-accent: #fd4949;
-
-  --theme-divider: #d1d5db;
+  --theme-text-accent: var(--imperial-red);
+  --theme-text-muted: var(--silver);
 }
 
 .calm {
@@ -48,8 +49,7 @@
   --theme-body: var(--dark-slate-gray);
   --theme-text-primary: var(--platinum);
   --theme-text-accent: var(--aquamarine);
-
-  --theme-divider: #d1d5db;
+  --theme-text-muted: var(--silver);
 }
 
 /* Set transition when toggling, not before, to prevent flicker. */

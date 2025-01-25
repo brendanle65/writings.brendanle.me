@@ -1,5 +1,5 @@
 todo:
-    1. add blog page layout
+    1. add annotations
     2. get rid of polaroid image - kinda of tacky, just use plain image instead
     3. add real content (dummy data to local data)
     4. fix excerpt scramble component
@@ -20,8 +20,7 @@ notes:
        instead of managing it globally through state higher up in the component tree. 
 
 commit: 
-    1. added remarkable
-    2. added scramble animation to exceprt component
+    1. added writing page layout
     
 useful links:
     1. https://keystrokecountdown.com/articles/remarkable/index.html

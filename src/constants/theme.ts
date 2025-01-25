@@ -62,12 +62,8 @@ const colors = {
   text: {
     primary: "var(--theme-text-primary)",
     accent: "var(--theme-text-accent)",
-    grays: {
-      500: "", // todo
-      1000: "", // todo
-    },
+    muted: "var(--theme-text-muted)",
   },
-  divider: "var(--theme-divider)",
 };
 
 const transitions = {
