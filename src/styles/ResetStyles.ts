@@ -18,7 +18,7 @@ export const ResetStyles = createGlobalStyle`
     border: none;
     background: none;
     font-family: inherit;
-    color: ${(props) => props.theme.colors.text.primary};
+    color: inherit;
     line-height: inherit;
     letter-spacing: inherit;
     scroll-behavior: smooth;

@@ -9,8 +9,9 @@ export const GlobalStyles = createGlobalStyle`
     font-family: ${(props) => props.theme.fonts.eb_garamond};
   }
 
-  // 2. Set background color
+  // 2. Set colors
   body {
+    color: ${(props) => props.theme.colors.text.primary};
     background-color: ${(props) => props.theme.colors.body};
   }
 

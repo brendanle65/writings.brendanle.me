@@ -146,3 +146,11 @@ export const Body = styled.div`
     font-style: italic;
   }
 `;
+
+export const NotesContainer = styled.div`
+  margin-top: 32px;
+
+  @media (min-width: ${(props) => props.theme.screens.laptop.start}) {
+    margin-top: 0;
+  }
+`;

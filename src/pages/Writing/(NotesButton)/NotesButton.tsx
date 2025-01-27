@@ -1,8 +1,9 @@
 // import libraries
-import { useState } from "react";
+import { useContext } from "react";
 
 // import other
 import { Hoverable } from "@components/other";
+import { writingStateContext } from "@contexts/WritingStateContext";
 
 // import styled components
 import * as Styled from "./NotesButton.styled";
@@ -14,12 +15,12 @@ import * as Styled from "./NotesButton.styled";
  * @component
  */
 export function NotesButton() {
-  const [isActive, setIsActive] = useState(false);
+  const { isNotesOn, setIsNotesOn } = useContext(writingStateContext);
 
   return (
-    <Hoverable as={Styled.Button} onClick={() => setIsActive(!isActive)}>
-      <Styled.IconWrapper $isActive={isActive}>
-        {isActive ? <Styled.EyeOffIcon /> : <Styled.EyeOnIcon />}
+    <Hoverable as={Styled.Button} onClick={() => setIsNotesOn(!isNotesOn)}>
+      <Styled.IconWrapper $isActive={isNotesOn}>
+        {isNotesOn ? <Styled.EyeOffIcon /> : <Styled.EyeOnIcon />}
       </Styled.IconWrapper>
 
       <Styled.Label>Toggle Author's Notes</Styled.Label>

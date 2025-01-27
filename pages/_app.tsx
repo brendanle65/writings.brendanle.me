@@ -7,6 +7,7 @@ import localFont from "next/font/local";
 // Import other
 import { ThemeProvider } from "@contexts/ThemeContext";
 import { CursorStateProvider } from "@contexts/CursorContext";
+import { WritingStateProvider } from "@contexts/WritingStateContext";
 import { Cursor } from "@components/other";
 
 // Import styles
@@ -71,8 +72,10 @@ export default function CustomApp({ Component, pageProps }: AppProps) {
       >
         <ThemeProvider>
           <CursorStateProvider>
-            <Component {...pageProps} />
-            <Cursor />
+            <WritingStateProvider>
+              <Component {...pageProps} />
+              <Cursor />
+            </WritingStateProvider>
           </CursorStateProvider>
 
           <ResetStyles />

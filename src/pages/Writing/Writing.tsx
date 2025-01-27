@@ -4,6 +4,7 @@ import { AppLayout } from "@components/layouts";
 import { HomeLink } from "./(HomeLink)/HomeLink";
 import { NotesButton } from "./(NotesButton)/NotesButton";
 import { Hoverable } from "@components/other";
+import { Notes, Notetag } from "@components/elements";
 
 // import styled components
 import * as Styled from "./Writing.styled";
@@ -15,6 +16,23 @@ import * as Styled from "./Writing.styled";
  * @page
  */
 export function Writing(props: WritingType) {
+  const notes = [
+    {
+      id: 1,
+      children: <>Reference to famous children's nursery rhyme "Twinkle, Twinkle Little Star."</>,
+    },
+    {
+      id: 2,
+      children: (
+        <>
+          Choose to make the first two stanzas reference the innocence of childhood dreams—like wishing upon stars or
+          hoping for extra sprinkles on ice cream. These small, whimsical desires set a playful tone, while gradually
+          transitioning into a deeper reflection: <i>Where did our childhood dreams go?</i>
+        </>
+      ),
+    },
+  ];
+
   return (
     <>
       <AppLayout>
@@ -55,18 +73,19 @@ export function Writing(props: WritingType) {
           </Styled.NotesButtonAside>
 
           <Styled.Body>
-            {/* <>notes</>  */}
             <>
               <p>
                 What if <br />
                 you wish upon a star <br />
                 and it twinkles?
+                <Notetag id={1} />
               </p>
 
               <p>
                 What if <br />
                 you ask for more, <br />
                 for extra sprinkles?
+                <Notetag id={2} />
               </p>
 
               <p>
@@ -166,6 +185,9 @@ export function Writing(props: WritingType) {
                 </i>
               </p>
             </>
+            <Styled.NotesContainer>
+              <Notes notes={notes} />
+            </Styled.NotesContainer>
           </Styled.Body>
         </Styled.Article>
       </AppLayout>
