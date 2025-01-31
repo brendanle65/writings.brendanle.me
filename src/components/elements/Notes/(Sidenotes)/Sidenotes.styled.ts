@@ -5,9 +5,8 @@ export const Container = styled.li`
   display: flex;
   gap: 12px;
   color: ${(props) => props.theme.colors.text.accent};
-  font-family: var(--font-cormorant-garamond);
   position: absolute;
-  margin-top: 5px;
+  /* margin-top: 5px; */ // todo: calculate dynamically
   flex-shrink: 0;
 `;
 
@@ -25,4 +24,6 @@ export const Stroke = styled.div`
 
 export const Text = styled.span`
   width: 100%;
+  font-family: ${(props) => props.theme.fonts.cormorant_garamond} !important;
+  font-size: 16px !important;
 `;

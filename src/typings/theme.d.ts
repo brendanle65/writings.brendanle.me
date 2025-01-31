@@ -1,9 +1,9 @@
+// import types
+import { JSX, ReactNode } from "react";
+import { ThemeType } from "@constants/theme";
+
 // import libraries
 import "styled-components";
-import { JSX, ReactNode } from "react";
-
-// import other
-import { ThemeType } from "@constants/theme";
 
 declare module "styled-components" {
   export interface DefaultTheme extends ThemeType {}

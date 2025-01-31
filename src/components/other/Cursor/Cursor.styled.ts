@@ -1,8 +1,8 @@
+// import types
+import { CursorExtras, CursorState } from "@contexts/CursorContext";
+
 // import libraries
 import styled, { css } from "styled-components";
-
-// import other
-import { CursorExtras, CursorState } from "@contexts/CursorContext";
 
 export const Wrapper = styled.div<{ $state: CursorState }>`
   position: fixed;

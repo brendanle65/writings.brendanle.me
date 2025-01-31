@@ -1,6 +1,9 @@
+// import types
+import { AnimationPlaybackControls, ValueAnimationTransition } from "framer-motion";
+
 // import libraries
 import { useState, useEffect, useRef } from "react";
-import { animate, AnimationPlaybackControls, ValueAnimationTransition } from "framer-motion";
+import { animate } from "framer-motion";
 
 // import other
 import { useMediaQuery } from "@hooks/useMediaQuery";

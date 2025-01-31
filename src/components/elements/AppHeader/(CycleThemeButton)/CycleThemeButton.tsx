@@ -1,6 +1,8 @@
+// import types
+import { InheritStyledProps } from "styled-components";
+
 // import libraries
 import { useContext } from "react";
-import { InheritStyledProps } from "styled-components";
 
 // import others
 import { Hoverable } from "@components/other";

@@ -1,3 +1,6 @@
+// import types
+import { ReactNode } from "react";
+
 // import other
 import { AppHeader, AppFooter } from "@components/elements";
 
@@ -5,7 +8,7 @@ import { AppHeader, AppFooter } from "@components/elements";
 import * as Styled from "./AppLayout.styled";
 
 interface AppLayoutProps {
-  children: any;
+  children: ReactNode;
 }
 
 /**

@@ -1,10 +1,13 @@
+// import types
+import { CursorState } from "@contexts/CursorContext";
+
 // import libraries
 import { motion } from "framer-motion";
 import { useContext } from "react";
 
 // import other
 import { useCursorPosition } from "@hooks/useCursorPosition";
-import { CursorState, cursorStateContext } from "@contexts/CursorContext";
+import { cursorStateContext } from "@contexts/CursorContext";
 
 // import styled components
 import * as Styled from "./Cursor.styled";

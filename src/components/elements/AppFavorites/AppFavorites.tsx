@@ -1,22 +1,22 @@
-// import libraries
+// import types
 import { InheritStyledProps } from "styled-components";
+import { WritingPiece } from "@typings/writing";
 
 // import other
 import { Hoverable } from "@components/other";
 
 // import styled components
 import * as Styled from "./AppFavorites.styled";
-import { WritingType } from "@typings/writing";
 
 export interface AppFavoriteProps extends InheritStyledProps {
   // how big to render list
   size: "large" | "small";
 
   // which writings to list
-  favorites: WritingType[];
+  favorites: WritingPiece[];
 
   // function to call when link is hovered over
-  onLinkEnter?: (post: WritingType) => void;
+  onLinkEnter?: (post: WritingPiece) => void;
 }
 
 /**
@@ -31,8 +31,8 @@ export function AppFavorites({ size, favorites, onLinkEnter }: AppFavoriteProps)
         Favorites:
       </Styled.Heading>
       <Styled.List $size={size}>
-        {favorites.map((writing) => (
-          <li key={writing.id}>
+        {favorites.map((writing, idx) => (
+          <li key={idx}>
             <Hoverable>
               <Styled.Link
                 onMouseEnter={() => onLinkEnter && onLinkEnter(writing)}

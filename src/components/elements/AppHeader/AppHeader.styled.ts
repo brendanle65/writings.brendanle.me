@@ -22,7 +22,7 @@ export const OpenMenuButton = styled.button`
 `;
 
 export const Logo = styled.div`
-  font-family: ${(props) => props.theme.fonts.mazius};
+  font-family: ${(props) => props.theme.fonts.mazius_display};
   font-size: 30px;
   height: 30px;
 

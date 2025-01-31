@@ -1,4 +1,4 @@
-// import libraries
+// import types
 import { InheritStyledProps } from "styled-components";
 
 // import other

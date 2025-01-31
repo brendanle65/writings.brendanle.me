@@ -1,5 +1,7 @@
-// import libraries
+// import types
 import Document, { Html, Head, Main, NextScript } from "next/document";
+
+// import libraries
 import { ServerStyleSheet } from "styled-components";
 
 /**

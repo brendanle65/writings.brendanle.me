@@ -1,19 +1,21 @@
+// import types
+import { WritingPiece } from "@typings/writing";
+
 // import libraries
 import Link from "next/link";
 
 // import other
 import { Hoverable } from "@components/other";
-import { WritingType } from "@typings/writing";
 
 // import styled components
 import * as Styled from "./Feed.styled";
 
 interface FeedProps {
   // A list of writings to post links to.
-  writings: WritingType[];
+  writings: WritingPiece[];
 
   // Function to run when post is hovered over, provides the id of the currently selected post
-  onPostEnter: (post: WritingType) => void;
+  onPostEnter: (post: WritingPiece) => void;
 }
 
 /**
@@ -28,7 +30,7 @@ export const Feed = ({ writings, onPostEnter }: FeedProps) => {
     // Sort by date
     const sorted = writings.toSorted((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-    const dateBlocks: Record<string, WritingType[]> = {};
+    const dateBlocks: Record<string, WritingPiece[]> = {};
 
     // Group them
     sorted.forEach((datum) => {
@@ -52,14 +54,16 @@ export const Feed = ({ writings, onPostEnter }: FeedProps) => {
           <Styled.Date>{date}:</Styled.Date>
 
           <Styled.PostList>
-            {grouped[date].map((post) => (
-              <Hoverable key={post.id} onMouseEnter={() => onPostEnter(post)}>
-                <Link href="/">
-                  <Styled.Post $font={post.fonts.title}>
-                    <Styled.Title>{post.title}</Styled.Title>
-                    <Styled.Description>
-                      It Was The Best of Times and The Worst of Times...sdsadsdsdds
-                    </Styled.Description>
+            {grouped[date].map((post, idx) => (
+              <Hoverable key={idx} onMouseEnter={() => onPostEnter(post)}>
+                <Link href={`/writings/${post.slug}`}>
+                  <Styled.Post>
+                    <Styled.TitleWrapper>
+                      <Styled.Title $font={post.fonts.title}>{post.title}</Styled.Title>
+                    </Styled.TitleWrapper>
+                    <Styled.DescriptionWrapper>
+                      <Styled.Description $font={post.fonts.body}>{post.description}</Styled.Description>
+                    </Styled.DescriptionWrapper>
                   </Styled.Post>
                 </Link>
               </Hoverable>

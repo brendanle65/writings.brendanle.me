@@ -1,3 +1,4 @@
+// import libraries
 import { stagger, AnimationSequence } from "framer-motion";
 
 // Note: We might consider rendering (Menu) using a portal to append it to a top-level element,

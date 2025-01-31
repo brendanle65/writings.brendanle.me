@@ -2,7 +2,7 @@
 import { AppSocials, AppFavorites } from "@components/elements";
 import { useAnimate } from "@hooks/useAnimate";
 import { Hoverable } from "@components/other";
-import { DUMMY_FAVORITES, DUMMY_ABOUT } from "@constants/dummy";
+import { LOCAL_FAVORITES_MENU } from "@constants/local";
 
 // import animations
 import { enter, exit } from "./Menu.animate";
@@ -35,7 +35,7 @@ export function Menu({ close }: MenuProps) {
       </Styled.MenuHeader>
 
       <Styled.MenuLinks>
-        <AppFavorites size="large" favorites={[DUMMY_ABOUT, ...DUMMY_FAVORITES]} />
+        <AppFavorites size="large" favorites={LOCAL_FAVORITES_MENU} />
       </Styled.MenuLinks>
 
       <AppSocials as="footer" size="large" align="end" />

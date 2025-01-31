@@ -1,3 +1,6 @@
+// import types
+import { FontStyle } from "@typings/writing";
+
 // import libraries
 import styled from "styled-components";
 
@@ -75,17 +78,30 @@ export const Theme = styled(Tag)`
   }
 `;
 
-export const Title = styled.h1`
+export const TitleWrapper = styled.div`
   margin-top: 8px;
   font-size: 40px;
-  font-weight: 500;
   line-height: 100%;
 `;
 
-export const Description = styled.p`
+export const Title = styled.h1<{ $font: FontStyle }>`
+  font-family: ${(props) => props.theme.fonts[props.$font.family]};
+  font-weight: ${(props) => props.$font.weight};
+  font-style: ${(props) => props.$font.style};
+  font-size: ${(props) => props.$font.size};
+`;
+
+export const DescriptionWrapper = styled.div`
   margin-top: 4px;
-  line-height: 150%;
+  line-height: 120%;
   font-size: 18px;
+`;
+
+export const Description = styled.p<{ $font: FontStyle }>`
+  font-family: ${(props) => props.theme.fonts[props.$font.family]};
+  font-weight: ${(props) => props.$font.weight};
+  font-style: ${(props) => props.$font.style};
+  font-size: ${(props) => props.$font.size};
 `;
 
 export const Metadata = styled.div`
@@ -134,16 +150,39 @@ export const Caption = styled.figcaption`
   color: ${(props) => props.theme.colors.text.muted};
 `;
 
-export const Body = styled.div`
-  line-height: 140%;
+export const Body = styled.div<{ $font: FontStyle }>`
   font-size: 17px;
 
-  p:not(:first-child) {
-    margin-top: 16px;
+  & * {
+    font-family: ${(props) => props.theme.fonts[props.$font.family]} !important;
+    font-weight: ${(props) => props.$font.weight} !important;
+    font-style: ${(props) => props.$font.style} !important;
+    font-size: ${(props) => props.$font.size} !important;
+    line-height: ${(props) => props.$font.height} !important;
   }
 
-  i {
-    font-style: italic;
+  div[data-type="line"] {
+    padding-left: 13.5px;
+    text-indent: -13.5px;
+    white-space: pre-wrap;
+  }
+
+  div[data-type="dinkus"] {
+    width: max-content;
+    margin: 0 auto;
+    height: 12px;
+    &::after {
+      font-family: inherit;
+      white-space: pre-wrap;
+      content: "* * *";
+    }
+  }
+
+  em {
+    font-family: inherit;
+    font-style: italic !important;
+    font-weight: inherit;
+    font-size: inherit !important;
   }
 `;
 

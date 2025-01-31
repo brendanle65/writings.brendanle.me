@@ -1,16 +1,16 @@
 // import libraries
 import { InheritStyledProps } from "styled-components";
+import { WritingNote } from "@typings/writing";
 
 // import other
 import { Hoverable } from "@components/other";
-import { Note } from "../Notes";
 
 // import styles
 import * as Styled from "./Footnotes.styled";
 
 interface FootnoteProps extends InheritStyledProps {
   // Array of footnotes to render.
-  footnotes: Note[];
+  footnotes: WritingNote[];
 }
 
 /**

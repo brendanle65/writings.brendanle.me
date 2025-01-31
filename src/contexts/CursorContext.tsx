@@ -1,5 +1,8 @@
+// import types
+import { ReactNode, Dispatch, SetStateAction } from "react";
+
 // import libraries
-import { ReactNode, Dispatch, SetStateAction, createContext, useState } from "react";
+import { createContext, useState } from "react";
 
 /**
  * The current state of the browser's cursor.

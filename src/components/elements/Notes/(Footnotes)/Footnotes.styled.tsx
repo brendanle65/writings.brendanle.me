@@ -16,13 +16,14 @@ export const Index = styled.a`
   text-decoration-thickness: 0.75px;
   text-underline-offset: 2px;
   /* font-family: inherit !important; */
-  font-family: ${(props) => props.theme.fonts.eb_garamond};
+  font-family: ${(props) => props.theme.fonts.eb_garamond} !important;
 `;
 
 export const Container = styled.li`
   color: ${(props) => props.theme.colors.text.accent};
-  font-family: ${(props) => props.theme.fonts.cormorant_garamond};
-  line-height: 140%;
+  font-family: ${(props) => props.theme.fonts.cormorant_garamond} !important;
+  line-height: 130% !important;
+  font-size: 17px !important;
 `;
 
 export const Text = styled.span`

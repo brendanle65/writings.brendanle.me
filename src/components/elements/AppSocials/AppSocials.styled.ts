@@ -1,9 +1,11 @@
+// import types
+import { AppSocialsProps } from "./AppSocials";
+
 // import libraries
 import styled from "styled-components";
 import { BsSubstack, BsLinkedin } from "react-icons/bs";
 
 // import other
-import { AppSocialsProps } from "./AppSocials";
 import { hoverUnderlineMixin } from "@styles/mixins/hoverUnderlineMixin";
 
 type SizeProp = AppSocialsProps["size"];

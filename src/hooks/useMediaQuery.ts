@@ -1,6 +1,8 @@
+// import types
+import { DefaultTheme } from "styled-components";
+
 // import libraries
 import { useState, useEffect } from "react";
-import { DefaultTheme } from "styled-components";
 
 // import other
 import { THEME } from "@constants/theme";

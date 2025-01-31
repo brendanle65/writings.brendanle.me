@@ -1,12 +1,10 @@
 todo:
-    1. add real content (dummy data to local data)
-    2. add font family to writing
-    3. get rid of polaroid image - kinda of tacky, just use plain image instead
-    4. add real content (dummy data to local data)
-    5. fix excerpt scramble component
-    6. rewrite home image component to be more pure (no refs inside animation functions)
-    7. fix cursor color on calm theme
-    8. fix isLaptop hook - setting initial state = null?
+    1. refactor styles
+    2. get rid of polaroid image - kinda of tacky, just use plain image instead
+    3. fix excerpt scramble component
+    4. rewrite home image component to be more pure (no refs inside animation functions)
+    5. fix cursor color on calm theme
+    6. fix isLaptop hook - setting initial state = null?
 
 ideas:
     1. featured highlights for some writings, similar to annotations
@@ -23,10 +21,8 @@ notes:
        instead of managing it globally through state higher up in the component tree. 
 
 commit: 
-    1. added writing page layout
-    2. added stagger utils functions
-    3. add writings react context
-    4. add notes and notetags
+    1. added local data
+    2. updated font styles
     
 useful links:
     1. https://keystrokecountdown.com/articles/remarkable/index.html

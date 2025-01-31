@@ -1,10 +1,11 @@
+// see `@constants/fonts.ts` for more details
 const fonts = {
+  mazius_display: "var(--font-mazius-display)",
+  im_fell_english_sc: "var(--font-im-fell-english-sc)",
+  im_fell_english: "var(--font-im-fell-english)",
+  lora: "var(--font-lora)",
   eb_garamond: "var(--font-eb-garamond)",
   cormorant_garamond: "var(--font-cormorant-garamond)",
-  mazius: "var(--font-mazius)",
-  coconat: "var(--font-coconat)",
-  absans: "var(--font-absans)",
-  noto_sans_mono: "var(--font-noto-sans-mono)",
 };
 
 const screens = {

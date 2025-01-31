@@ -1,5 +1,8 @@
+// import types
+import { FontStyle } from "@typings/writing";
+
 // import libraries
-import styled, { DefaultTheme } from "styled-components";
+import styled from "styled-components";
 import NextLink from "next/link";
 
 // import other
@@ -22,9 +25,12 @@ export const List = styled.ul<{ $size: SizeProp }>`
   font-size: ${(props) => (props.$size === "small" ? "16px" : "32px")};
 `;
 
-export const Link = styled(NextLink)<{ $font: keyof DefaultTheme["fonts"]; $size: SizeProp }>`
+export const Link = styled(NextLink)<{ $font: FontStyle; $size: SizeProp }>`
   display: block;
-  font-family: ${(props) => props.theme.fonts[props.$font]};
+  font-family: ${(props) => props.theme.fonts[props.$font.family]};
+  font-weight: ${(props) => props.$font.weight};
+  font-style: ${(props) => props.$font.style};
+  font-size: ${(props) => props.$font.size};
   transition: all 0.2s ease-out;
 
   &:hover {

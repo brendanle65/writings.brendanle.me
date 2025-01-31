@@ -1,10 +1,12 @@
+// import types
+import { InheritStyledProps } from "styled-components";
+import { WritingNote } from "@typings/writing";
+
 // import libraries
 import { useEffect, useState, useContext } from "react";
-import { InheritStyledProps } from "styled-components";
 import { motion } from "framer-motion";
 
 // import other
-import { Note } from "../Notes";
 import { writingStateContext } from "@contexts/WritingStateContext";
 import { THEME } from "@constants/theme";
 import { stagger } from "@utils/stagger";
@@ -14,7 +16,7 @@ import * as Styled from "./Sidenotes.styled";
 
 interface SidenoteProps extends InheritStyledProps {
   // Array of sidenotes to render.
-  sidenotes: Note[];
+  sidenotes: WritingNote[];
 }
 
 /**
@@ -64,7 +66,7 @@ export function Sidenotes({ sidenotes, className }: SidenoteProps) {
             <Styled.Stroke
               as={motion.div}
               initial={{ width: 0 }}
-              animate={{ width: sidenotes[idx].lineLength ?? 20 }}
+              animate={{ width: 20 }}
               transition={{ duration: 0.25, delay: staggerDelay(idx) }}
             />
           </Styled.Line>

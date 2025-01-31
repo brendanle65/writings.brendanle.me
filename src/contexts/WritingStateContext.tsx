@@ -1,5 +1,8 @@
+// import types
+import { Dispatch, SetStateAction, ReactNode, RefObject } from "react";
+
 // import libraries
-import { createContext, useState, Dispatch, SetStateAction, ReactNode, useEffect, useRef, RefObject } from "react";
+import { createContext, useState, useEffect, useRef } from "react";
 
 // import other
 import { useMediaQuery } from "@hooks/useMediaQuery";

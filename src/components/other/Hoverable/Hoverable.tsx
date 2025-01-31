@@ -1,5 +1,8 @@
+// import types
+import { JSX } from "react";
+
 // import libraries
-import { MouseEventHandler, useContext, JSX } from "react";
+import { MouseEventHandler, useContext } from "react";
 import { InheritStyledProps } from "styled-components";
 
 // import other

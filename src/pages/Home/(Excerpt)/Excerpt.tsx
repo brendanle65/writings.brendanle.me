@@ -1,6 +1,9 @@
+// import types
+import { ValueAnimationTransition, AnimationPlaybackControls } from "framer-motion";
+
 // import libraries
 import { useEffect, useRef } from "react";
-import { animate, ValueAnimationTransition, AnimationPlaybackControls } from "framer-motion";
+import { animate } from "framer-motion";
 import { Remarkable } from "remarkable";
 
 // import other

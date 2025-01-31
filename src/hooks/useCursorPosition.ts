@@ -1,9 +1,12 @@
+// import types
+import { MousePositionProps } from "./useMousePosition";
+
 // import libraries
 import { useSpring } from "framer-motion";
 import { useEffect } from "react";
 
 // import other
-import { useMousePosition, MousePositionProps } from "./useMousePosition";
+import { useMousePosition } from "./useMousePosition";
 
 /**
  * Tracks the mouse position and smooths the movement using a spring animation.
